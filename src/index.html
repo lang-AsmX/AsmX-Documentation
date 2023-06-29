@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsmX Documentation</title>
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/my-framework.css">
+</head>
+<body>
+    <div class="wrap__computer-menu">
+        <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="wrap_menu" id="navbar-menu">
+            <ul class="wrap_menu__items">
+                <li class="menu__items_item"><a href="./">AsmX</a></li>
+                <li class="menu__items_item"><a href="#overview">Overview</a></li>
+                <li class="menu__items_item"><a href="">Documentation</a></li>
+                <li class="menu__items_item"><a href="#releases">Download</a></li>
+                <li class="menu__items_item"><a href="#opensource">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div role="main" class="wrap">
+        <div class="wrap_overview">
+            <div class="subwrap_overview">
+                <div class="wrap_overview__text">
+                    AsmX is a modern programming language, has great flexibility for refactoring code. Has Turing completeness. Low-level.
+                </div>
+
+                <div class="wrap_overview__image">
+                    <img src="./images/code.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap_content">
+            <div id="opensource" class="flex flex-row flex-precent50">
+                <div class="flex flex-column">
+                    <h2>Open Source</h2>
+                    <p>The project is open source under a license.</p>
+                </div>
+            
+                <div class="flex">
+                    <a href="https://github.com/langprogramming-AsmX/AsmX">
+                        <i class="fa-brands fa-github-square fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div id="learning" class="flex flex-row flex-precent50">
+                <div class="flex flex-column">
+                    <h2>Learning</h2>
+                    <p>You can learn this programming language anytime, anywhere in the world.</p>
+                </div>
+                
+                <div class="flex">
+                    <i class="fa-solid fa-code fa-2xl"></i>
+                </div>
+            </div>
+
+            <div id="extension" class="flex flex-row flex-precent50">
+                <div class="flex flex-column">
+                    <h2>Extension</h2>
+                    <p>AsmX presents several extensions for comfortable coding on various IDEs</p>
+                </div>
+                
+                <div class="flex">
+                    <i class="fa-solid fa-cubes fa-2xl"></i>
+                </div>
+            </div>
+
+            <div id="compilesupport" class="flex flex-row flex-precent50">
+                <div class="flex flex-column">
+                    <h2>CLI</h2>
+                    <p>AsmX supports the CLI for building programs, compiling, specifying parameters, and so on.</p>
+                </div>
+                
+                <div class="flex">
+                    <i class="fa-solid fa-terminal fa-2xl"></i>
+                </div>
+            </div>
+
+            <div id="compilesupport" class="flex flex-row flex-precent50">
+                <div class="flex flex-column">
+                    <h2>Compile</h2>
+                    <p>AsmX supports ARM compilation</p>
+                </div>
+                
+                <div class="flex">
+                    <i class="fa-solid fa-microchip fa-2xl"></i>
+                </div>
+            </div>
+            
+
+            <div id="releases" class="flex flex-row">
+                <div class="flex flex-column" style="width: 30%;">
+                    <h1>Releases</h1>
+                    <p>you can download any version of the programming language.</p>
+                </div>
+
+                <div class="flex releases-list" style="width: 70%;"></div>
+            </div>
+
+
+            <div id="stargazers" class="flex flex-row">
+                <div class="flex flex-column" style="width: 30%;">
+                    <h1>Stargazers (<div class="stargazers-list_count" style="display: inline-block;  padding: 0 6px;"></div>)</h1>
+                    <p></p>
+                </div>
+
+                <div class="flex flex-row" style="width: 30%;">
+                    <div class="stargazers-list" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="backend/github.js"></script>
+</body>
+</html>

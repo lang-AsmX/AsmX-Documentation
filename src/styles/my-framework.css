@@ -1,0 +1,23 @@
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.block {
+    display: block;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-precent50 div {
+    width: 50%;
+}
