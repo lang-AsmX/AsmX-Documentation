@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsmX examples</title>
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/my-framework.css">
+
+    <style>
+        .wrap_content div {}
+
+        .examples_list_source-code div {
+            display: block;
+            width: 100%;
+            padding: 0;
+            color: #ABB2BF;
+        }
+
+        body {
+            background-color: #abb8c3;
+        }
+
+        /* .examples_list_source-code {
+            display: flex;
+            flex-direction: column;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.55) 0px 20px 68px;
+            overflow: hidden;
+            resize: horizontal;
+            width: max-content;
+            min-width: 1000px;
+            padding: 18px;
+            background: #282c34;
+            margin: 10px;
+            margin-bottom: 40px;
+        } */
+
+        /* .examples_list_source-code__line {
+            padding: 0;
+        } */
+
+        .examples_list_source-code {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3em;
+            background-color: #abb8c3;
+            width: max-content;
+        }
+
+        #navbar {
+            overflow: hidden;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        #window {
+            display: flex;
+            flex-direction: column;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.55) 0px 20px 68px;
+            overflow: hidden;
+            resize: horizontal;
+            width: max-content;
+            min-width: 1000px;
+            padding: 18px;
+            background-color: #282c34;
+        }
+
+        #window-controls {
+            display: flex;
+            float: left;
+            margin-top: 2px;
+        }
+
+        #window-title {
+            margin: 0 80px;
+        }
+
+        #container {
+            max-width: 100%;
+            white-space: pre-wrap;
+            word-break: break-all;
+            color: #abb2bf;
+            background-color: #282c34;
+            font-family: Consolas "Courier New", monospace;
+            font-size: calc(14px * 1px);
+            font-weight:normal;
+        }
+
+
+        .red {
+            background-color: #ff5f5a;
+        }
+
+        .yellow {
+            background-color: #ffbe2e;
+        }
+
+        .green {
+            background-color: #2aca44;
+        }
+
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap__computer-menu">
+        <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <div class="wrap_menu" id="navbar-menu">
+            <ul class="wrap_menu__items">
+                <li class="menu__items_item"><a href="../index.html">AsmX</a></li>
+                <li class="menu__items_item"><a href="../index.html#overview">Overview</a></li>
+                <li class="menu__items_item"><a href="../index.html#learning">Documentation</a></li>
+                <li class="menu__items_item"><a href="../index.html#releases">Download</a></li>
+                <li class="menu__items_item"><a href="../index.html#opensource">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div role="main" class="wrap">
+        <div class="wrap_overview">
+            <div class="subwrap_overview">
+                <div class="wrap_overview__text">
+                    AsmX is a modern programming language, has great flexibility for refactoring code. Has Turing completeness. Low-level.
+                </div>
+
+                <div class="wrap_overview__image">
+                    <img src="../images/code.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap_content">
+            <div id="examples" class="flex flex-row">
+                <div class="flex flex-column">
+                    <div class="examples-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../backend/github.js"></script>
+    <script src="../backend/pages/examples.js"></script>
+</body>
+</html>

@@ -46,6 +46,9 @@
     color: #242424;
 }
 
+i[class^="fa-"]:hover  {
+    transform: scale(1.09);
+}
 
 body {
     /* color: white; */

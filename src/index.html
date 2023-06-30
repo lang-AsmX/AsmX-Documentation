@@ -22,7 +22,7 @@
             <ul class="wrap_menu__items">
                 <li class="menu__items_item"><a href="./">AsmX</a></li>
                 <li class="menu__items_item"><a href="#overview">Overview</a></li>
-                <li class="menu__items_item"><a href="">Documentation</a></li>
+                <li class="menu__items_item"><a href="#learning">Documentation</a></li>
                 <li class="menu__items_item"><a href="#releases">Download</a></li>
                 <li class="menu__items_item"><a href="#opensource">GitHub</a></li>
             </ul>
@@ -67,6 +67,32 @@
                 </div>
             </div>
 
+            <div id="booklearn" class="flex flex-row flex-precent50">
+                <div class="flex flex-column">
+                    <h2>Book</h2>
+                    <p>You can learn this programming language in book format.</p>
+                </div>
+                
+                <div class="flex">
+                    <a href="./pages/book.html">
+                        <i class="fa-sharp fa-solid fa-graduation-cap fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="examples" class="flex flex-row flex-precent50">
+                <div class="flex flex-column">
+                    <h2>Examples</h2>
+                    <p>You can see examples of programs in the AsmX programming language</p>
+                </div>
+                
+                <div class="flex">
+                    <a href="./pages/examples.html">
+                        <i class="fa-sharp fa-solid fa-file-code fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
             <div id="extension" class="flex flex-row flex-precent50">
                 <div class="flex flex-column">
                     <h2>Extension</h2>
@@ -74,7 +100,9 @@
                 </div>
                 
                 <div class="flex">
-                    <i class="fa-solid fa-cubes fa-2xl"></i>
+                    <a href="./pages/extension.html">
+                        <i class="fa-solid fa-cubes fa-2xl"></i>
+                    </a>
                 </div>
             </div>
 
@@ -105,6 +133,10 @@
                 <div class="flex flex-column" style="width: 30%;">
                     <h1>Releases</h1>
                     <p>you can download any version of the programming language.</p>
+
+                    <select name="filter-tag" id="filter-tag">
+                        <option value="all">all tags</option>
+                    </select>
                 </div>
 
                 <div class="flex releases-list" style="width: 70%;"></div>
@@ -126,5 +158,6 @@
 
 
     <script src="backend/github.js"></script>
+    <script src="backend/pages/index.js"></script>
 </body>
 </html>
