@@ -39,6 +39,7 @@
     --color-counter-border: rgba(0,0,0,0);
 }
 
+
 * {
     padding: 0;
     margin: 0;
@@ -46,20 +47,23 @@
     color: #242424;
 }
 
+
 i[class^="fa-"]:hover  {
     transform: scale(1.09);
 }
 
+
 body {
-    /* color: white; */
     font-size: medium 'UI';
-    background-color: #fff;
+    /* background-color: #fff; */
     text-rendering: optimizeLegibility;
 }
+
 
 a {
     text-decoration: none;
 }
+
 
 .wrap {
     display: flex;
@@ -71,7 +75,9 @@ a {
 }
 
 .wrap_menu {
-    background: rgb(214, 210, 210);
+    background: #f5f5f5;
+    /* color: #242424; */
+    color: var(--menu-fg);
     justify-content: left;
     position: fixed;
     top: 0;
@@ -109,6 +115,7 @@ a {
     /* align-items: center; */
 }
 
+
 .subwrap_overview {
     display: flex;
     flex-direction: row;
@@ -117,12 +124,14 @@ a {
     width: 100%;
 }
 
+
 .wrap_overview__text {
     text-align: left;
     padding-left: 10px;
     font-size: 28px;
     width: 50%;
 }
+
 
 .wrap_overview__image {
     width: 50%;
@@ -134,9 +143,11 @@ a {
     width: 700px;
 }
 
+
 #navbar-toggle {
     display: none;
 }
+
 
 button {
     border-radius: 8px;
@@ -145,9 +156,11 @@ button {
     padding: 5px;
 }
 
+
 button a {
     color: #242424;
 }
+
 
 .learning , .learning h1 {
     text-align: left;
@@ -155,6 +168,7 @@ button a {
     font-size: 16px;
     padding: 60 0px;
 }
+
 
 .wrap_content div {
     justify-content: center;
@@ -167,22 +181,28 @@ button a {
     text-align: left;
 }
 
+
 .wrap_content div {
     padding: 1rem 1rem;
     text-align: left;
 }
 
+
 .wrap_content div:nth-child(2) {
         align-items: center;
 }
+
 
 .wrap_content .releases-list:nth-child(2) {
     align-items: flex-start;
 }
 
+
 .wrap_content > div:nth-child(even) {
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
+    background-color: var(--subwrap-bg);
 }
+
 
 .stargazers-list {
     display: grid;
@@ -215,11 +235,13 @@ button a {
     margin-left: 20%;
 }
 
+
 .releases-list div {
     display: block;
     width: 100%;
     padding: 0;
 }
+
 
 /* .releases-list__release-assets * {
     all: unset;
@@ -231,6 +253,7 @@ button a {
     justify-content: center;
     background: #f5f5f5;
 }
+
 
 .Counter {
     display: inline-block;
@@ -264,17 +287,21 @@ button a {
     width: 100px;
 }
 
+
 .releases-list__release > summary {
     height: 40px;
 }
+
 
 .releases-list__release > .releases-list__release-assets > summary:nth-child(1) {
     padding-bottom: 22px;
 }
 
+
 .releases-list__release-assets > div > a {
     padding: 1rem 1rem;
 }
+
 
 .releases-list__release-assets_archive {
     display: block;
@@ -283,6 +310,14 @@ button a {
 /* .flex-precent50 div > * {
     all: unset;
 } */
+
+.theme-change {
+    display: flex; 
+    float: left;
+    margin-top: 10px; 
+    background: transparent; 
+    color: white;
+}
 
 
 .fa { transform: scale(4); }
