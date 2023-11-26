@@ -4,16 +4,23 @@ body[data-theme^="dark"] img {
 
 
 :root [data-theme^="light"] {
-    --subwrap-bg: #f5f5f5;
+    --even-container: #f5f5f5;
+    --odd-container: white;
+
     --default-color: white;
     --menu-fg: #242424;
 }
 
 
 :root [data-theme^="dark"] {
-    --subwrap-bg: #000000;
-    --default-color: #f1f1f1;
+    /* --subwrap-bg: #222299; */
+    --text-color: #CCCCCC;
+    /* --default-color: #f1f1f1; */
     --menu-fg: var(--default-color);
+    --default-color: #212121;
+
+    --even-container: #262626;
+    --odd-container: #2C2C2C;
 }
 
 /* 

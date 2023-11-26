@@ -5,164 +5,810 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AsmX Documentation</title>
 
-    <link rel="stylesheet" href="styles/theme.css">
-    <link rel="stylesheet" href="styles/main.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/my-framework.css">
+    <link rel="preload" href="./styles/index.css" as="style">
+    <link rel="stylesheet" href="./styles/index.css" data-n-g="">
 </head>
-<body data-theme="light">
-    <div class="wrap__computer-menu">
-        <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-
-        <div class="wrap_menu" id="navbar-menu">
-            <ul class="wrap_menu__items">
-                <li class="menu__items_item"><a href="./">AsmX</a></li>
-                <li class="menu__items_item"><a href="#overview">Overview</a></li>
-                <li class="menu__items_item"><a href="#learning">Documentation</a></li>
-                <li class="menu__items_item"><a href="#releases">Download</a></li>
-                <li class="menu__items_item"><a href="#opensource">GitHub</a></li>
-                <li class="menu__items_item">
-                    <button class="theme-change">Chage Theme</button>
-                </li>
-            </ul>
+<body>
+    <main class="group flex flex-col h-screen overflow-y-auto w-full scroll-smooth"
+        style="scroll-behavior: smooth; font-family: var(--body-fontFamily); font-weight: var(--body-fontWeight);">
+        <div class="relative" style="z-index: 40;">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
+            </div>
+            <header id="website-header" class="relative z-20 pointer-events-none"
+                style="background-color: rgb(31, 31, 31); color: rgb(255, 255, 255);">
+                <div class="grid items-center lg:gap-6 xl:gap-10 mx-auto px-5 md:px-6 pt-6 pb-6 lg:px-12"
+                    style="grid-template-columns: 1fr auto 1fr;">
+                    <div class="lg:w-auto whitespace-nowrap"></div>
+                    <div class="flex justify-center">
+                        <div class="grid max-w-full">
+                            <h2 class="heading-small lg:heading-medium  whitespace-nowrap overflow-hidden overflow-ellipsis max-w-full"
+                                style="color: rgb(255, 255, 255); font-family: var(--header-logo-fontFamily); font-weight: var(--header-logo-fontWeight); width: auto;">
+                                AsmX</h2>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="hidden lg:flex item-center gap-10">
+                            <ul class="lg:flex items-center gap-x-4 gap-y-2 flex-wrap justify-end hidden">
+                                <li>
+                                    <div class="flex justify-center items-center"><svg
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                            width="24" height="24" class="icon w-6 h-6" aria-hidden="true"
+                                            style="color: rgb(255, 255, 255);">
+                                            <path fill-rule="evenodd"
+                                                d="M10.4375 21.8784C5.65941 21.1274 2 16.9877 2 12 2 6.48086 6.48086 2 12 2c5.5191 0 10 4.48086 10 10 0 4.9877-3.6594 9.1274-8.4375 9.8784v-6.9878h2.3301L16.3359 12h-2.7734v-1.8758c0-.79084.3874-1.5617 1.6296-1.5617h1.261V6.10156s-1.1443-.19531-2.2385-.19531c-2.2842 0-3.7771 1.38438-3.7771 3.89063V12H7.89844v2.8906h2.53906v6.9878Z"
+                                                clip-rule="evenodd"></path>
+                                        </svg></div>
+                                </li>
+                                <li>
+                                    <div class="flex justify-center items-center"><svg
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                            width="24" height="24" class="icon w-6 h-6" aria-hidden="true"
+                                            style="color: rgb(255, 255, 255);">
+                                            <path fill-rule="evenodd"
+                                                d="M12 2c5.5191 0 10 4.48086 10 10 0 5.5191-4.4809 10-10 10-5.51914 0-10-4.4809-10-10C2 6.48086 6.48086 2 12 2Zm0 3.75c-1.6974 0-1.9102.00719-2.57688.03762-.66523.03035-1.11957.13601-1.51714.29051-.41098.15972-.75953.37343-1.107.72089-.34746.34746-.56117.69602-.72089 1.107-.1545.39753-.26012.85187-.29051 1.5171C5.75719 10.0898 5.75 10.3026 5.75 12s.00719 1.9102.03758 2.5769c.03039.6652.13601 1.1195.29051 1.5171.15972.411.37343.7595.72089 1.107.34747.3475.69602.5612 1.107.7209.39757.1545.85191.2601 1.51714.2905.66668.0304.87948.0376 2.57688.0376s1.9102-.0072 2.5769-.0376c.6652-.0304 1.1195-.136 1.5171-.2905.411-.1597.7595-.3734 1.107-.7209.3475-.3475.5612-.696.7209-1.107.1545-.3976.2601-.8519.2905-1.5171.0304-.6667.0376-.8795.0376-2.5769 0-1.6974-.0072-1.9102-.0376-2.57688-.0304-.66523-.136-1.11957-.2905-1.5171-.1597-.41098-.3734-.75954-.7209-1.107s-.696-.56117-1.107-.72089c-.3976-.1545-.8519-.26016-1.5171-.29051C13.9102 5.75719 13.6974 5.75 12 5.75Zm0 1.12613c1.6688 0 1.8665.00637 2.5255.03645.6094.02781.9403.12961 1.1606.21519.2917.11336.4999.24883.7186.46754.2187.21867.3542.42692.4675.71864.0856.22023.1874.55113.2152 1.1605.0301.65905.0365.85675.0365 2.52555s-.0064 1.8665-.0365 2.5255c-.0278.6094-.1296.9403-.2152 1.1606-.1133.2917-.2488.4999-.4675.7186-.2187.2187-.4269.3542-.7186.4675-.2203.0856-.5512.1874-1.1606.2152-.6589.0301-.8566.0365-2.5255.0365s-1.8666-.0064-2.52555-.0365c-.60937-.0278-.94027-.1296-1.1605-.2152-.29176-.1133-.49997-.2488-.71868-.4675-.21871-.2187-.35414-.4269-.4675-.7186-.08558-.2203-.18742-.5512-.21523-1.1606-.03008-.659-.03641-.8567-.03641-2.5255s.00633-1.8665.03641-2.52555c.02781-.60937.12965-.94027.21523-1.1605.11336-.29172.24879-.49997.4675-.71864.21871-.21871.42692-.35418.71868-.46754.22023-.08558.55113-.18738 1.1605-.21519.65905-.03008.85675-.03645 2.52555-.03645Zm0 1.91442c-1.7725 0-3.20945 1.43695-3.20945 3.20945S10.2275 15.2095 12 15.2095s3.2095-1.437 3.2095-3.2095c0-1.7725-1.437-3.20945-3.2095-3.20945Zm0 5.29275c-1.1506 0-2.08332-.9327-2.08332-2.0833 0-1.1506.93272-2.08332 2.08332-2.08332S14.0833 10.8494 14.0833 12 13.1506 14.0833 12 14.0833Zm4.0863-5.41955c0 .41422-.3358.74996-.7501.74996-.4141 0-.7499-.33574-.7499-.74996s.3358-.75.7499-.75c.4143 0 .7501.33578.7501.75Z"
+                                                clip-rule="evenodd"></path>
+                                        </svg></div>
+                                </li>
+                                <li>
+                                    <div class="flex justify-center items-center"><svg
+                                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
+                                            width="24" height="24" class="icon w-6 h-6" aria-hidden="true"
+                                            style="color: rgb(255, 255, 255);">
+                                            <path
+                                                d="M13.6756 10.6218 20.2324 3h-1.5537l-5.6933 6.61788L8.43817 3H3.1935l6.8763 10.0074L3.1935 21h1.55384l6.01226-6.9887L15.5618 21h5.2447l-7.1313-10.3782h.0004Zm-2.1282 2.4738-.6967-.9965-5.54349-7.92939h2.38662l4.47367 6.39919.6967.9966 5.8152 8.318h-2.3866l-4.7454-6.7875v-.0004Z">
+                                            </path>
+                                        </svg></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ml-auto lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                fill="currentColor" aria-hidden="true" class="icon w-5 h-5 ml-auto mr-0">
+                                <path fill-rule="evenodd"
+                                    d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10zm0 5.25a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75a.75.75 0 01-.75-.75z"
+                                    clip-rule="evenodd"></path>
+                            </svg></div>
+                    </div>
+                </div>
+            </header>
         </div>
-    </div>
-    
-    <div role="main" class="wrap">
-        <div class="wrap_overview">
-            <div class="subwrap_overview">
-                <div class="wrap_overview__text">
-                    AsmX is a modern programming language, has great flexibility for refactoring code. Has Turing completeness. Low-level.
-                </div>
-
-                <div class="wrap_overview__image">
-                    <img src="./images/code.png" alt="">
-                </div>
+        <div class="relative">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
             </div>
+            <section class="relative" style="z-index: 41;">
+                <div data-text-color="#FFFFFF"
+                    class="relative z-10 flex justify-center flex-none break-word transition-all duration-300 pointer-events-none items-center fix-safari-flickering"
+                    data-combine-with-header="false" style="min-height: calc(54px);">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute inset-0 z-5 transition-all duration-300"
+                            style="background-image: linear-gradient(rgb(31, 31, 31), rgb(249, 115, 22)); opacity: 0.5;">
+                        </div>
+                        <div class="absolute inset-0 z-0 transition-all duration-300"
+                            style="background-image: url(&quot;https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwxN3x8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080&quot;); background-position: center center; background-size: cover;">
+                        </div>
+                    </div>
+                    <div
+                        class="relative z-10 container mx-auto px-5 md:px-6 transition-all duration-300 pt-12 lg:pt-40 pb-12 lg:pb-40">
+                        <div class="relative z-10  opacity-100 translate-y-0" style="">
+                            <div class="max-w-3xl transition-all duration-300 text-left ml-0 mr-auto">
+                                <h2 class="mb-6 break-word transition-all duration-300 text-left heading-xlarge"
+                                    style="color: rgb(255, 255, 255); font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                    Unlock the Power of Documentation Programming</h2>
+                                <p class="transition-all duration-300 body-large"
+                                    style="color: rgb(255, 255, 255); scroll-behavior: smooth; font-family: var(--body-fontFamily); font-weight: var(--body-fontWeight);">
+                                    Discover the efficiency and precision of AsmX, the ultimate programming language for
+                                    seamless documentation.</p>
+                                <div class="flex md:inline-flex flex-col md:flex-row md:gap-4 "><button
+                                        class="website-button xl w-full md:w-max mt-6 lg:mt-8"
+                                        style="border-width: 2px; border-style: solid; box-shadow: none; scroll-behavior: smooth; font-family: var(--body-fontFamily); font-weight: var(--body-fontWeight); background-color: rgb(220, 195, 139); color: rgb(0, 0, 0); border-radius: 8px; border-color: rgb(220, 195, 139);">Learn
+                                        More</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-
-        <div class="wrap_content">
-            <div id="opensource" class="flex flex-row flex-precent50">
-                <div class="flex flex-column">
-                    <h2>Open Source</h2>
-                    <p>The project is open source under a license.</p>
-                </div>
-            
-                <div class="flex">
-                    <a href="https://github.com/langprogramming-AsmX/AsmX">
-                        <i class="fa-brands fa-github-square fa-2xl"></i>
-                    </a>
-                </div>
+        <div class="relative" style="z-index: 38;">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
             </div>
-            
-            <div id="learning" class="flex flex-row flex-precent50">
-                <div class="flex flex-column">
-                    <h2>Learning</h2>
-                    <p>You can learn this programming language anytime, anywhere in the world.</p>
+            <section class="relative">
+                <div class="relative flex flex-none break-word transition-all duration-300 pointer-events-none items-center fix-safari-flickering"
+                    style="min-height: calc(134px);">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute inset-0 z-5 transition-all duration-300"
+                            style="background-color: rgb(26, 26, 26);"></div>
+                    </div>
+                    <div
+                        class="relative z-10 container mx-auto px-5 md:px-6 transition-all duration-300 pt-8 lg:pt-12 pb-8 lg:pb-12">
+                        <div class="relative z-10  opacity-100 translate-y-0" style="">
+                            <div class="rich-text-block website-wysiwyg w-full max-w-5xl transition-all duration-300 text-left ml-0 mr-auto"
+                                style="color: rgb(255, 255, 255);">
+                                <p class="large" style="white-space: pre-line">Introducing AsmX, the cutting-edge
+                                    documentation programming language that revolutionizes the way developers create and
+                                    maintain code documentation. Based in the USA, AsmX provides a seamless solution for
+                                    developers seeking a powerful and efficient tool to streamline their documentation
+                                    process. With its user-friendly interface and robust features, AsmX empowers
+                                    developers to effortlessly generate comprehensive and accurate documentation, saving
+                                    valuable time and resources. Elevate your programming experience with AsmX and
+                                    unlock a new level of productivity and precision in code documentation.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="flex">
-                    <i class="fa-solid fa-code fa-2xl"></i>
-                </div>
-            </div>
-
-            <div id="booklearn" class="flex flex-row flex-precent50">
-                <div class="flex flex-column">
-                    <h2>Book</h2>
-                    <p>You can learn this programming language in book format.</p>
-                </div>
-                
-                <div class="flex">
-                    <a href="./pages/book.html">
-                        <i class="fa-sharp fa-solid fa-graduation-cap fa-2xl"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div id="examples" class="flex flex-row flex-precent50">
-                <div class="flex flex-column">
-                    <h2>Examples</h2>
-                    <p>You can see examples of programs in the AsmX programming language</p>
-                </div>
-                
-                <div class="flex">
-                    <a href="./pages/examples.html">
-                        <i class="fa-sharp fa-solid fa-file-code fa-2xl"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div id="extension" class="flex flex-row flex-precent50">
-                <div class="flex flex-column">
-                    <h2>Extension</h2>
-                    <p>AsmX presents several extensions for comfortable coding on various IDEs</p>
-                </div>
-                
-                <div class="flex">
-                    <a href="./pages/extension.html">
-                        <i class="fa-solid fa-cubes fa-2xl"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div id="compilesupport" class="flex flex-row flex-precent50">
-                <div class="flex flex-column">
-                    <h2>CLI</h2>
-                    <p>AsmX supports the CLI for building programs, compiling, specifying parameters, and so on.</p>
-                </div>
-                
-                <div class="flex">
-                    <i class="fa-solid fa-terminal fa-2xl"></i>
-                </div>
-            </div>
-
-            <div id="compilesupport" class="flex flex-row flex-precent50">
-                <div class="flex flex-column">
-                    <h2>Compile</h2>
-                    <p>AsmX supports ARM compilation</p>
-                </div>
-                
-                <div class="flex">
-                    <i class="fa-solid fa-microchip fa-2xl"></i>
-                </div>
-            </div>
-            
-
-            <div id="releases" class="flex flex-row">
-                <div class="flex flex-column" style="width: 30%;">
-                    <h1>Releases</h1>
-                    <p>you can download any version of the programming language.</p>
-
-                    <select name="filter-tag" id="filter-tag">
-                        <option value="all">all tags</option>
-                    </select>
-                </div>
-
-                <div class="flex releases-list" style="width: 70%;"></div>
-            </div>
-
-
-            <div id="stargazers" class="flex flex-row">
-                <div class="flex flex-column" style="width: 30%;">
-                    <h1>Stargazers (<div class="stargazers-list_count" style="display: inline-block;  padding: 0 6px;"></div>)</h1>
-                    <p></p>
-                </div>
-
-                <div class="flex flex-row" style="width: 30%;">
-                    <div class="stargazers-list" style="width: 70%;"></div>
-                </div>
-            </div>
+            </section>
         </div>
-    </div>
-
-
-    <script src="backend/github.js"></script>
-    <script src="backend/pages/index.js"></script>
-    <script src="backend/theme.js"></script>
+        <div class="relative" style="z-index: 37;">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
+            </div>
+            <section class="relative">
+                <div class="relative flex flex-none break-word transition-all duration-300 pointer-events-none items-center fix-safari-flickering"
+                    style="min-height: calc(134px);">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute inset-0 z-5 transition-all duration-300"
+                            style="background-color: rgb(41, 41, 41);"></div>
+                    </div>
+                    <div
+                        class="relative z-10 container mx-auto px-5 md:px-6 transition-all duration-300 pt-16 lg:pt-32 pb-16 lg:pb-32">
+                        <div class="flex flex-wrap w-full justify-center" style="gap: 40px;">
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-1 aspect-h-1">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="a computer screen with a bunch of text on it"
+                                                    src="https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwxMXx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="1187810"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    API Documentation</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Comprehensive and clear documentation
+                                                    for your API to help developers understand and utilize your
+                                                    programming language efficiently.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-1 aspect-h-1">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="man in white crew neck t-shirt sitting on brown chair"
+                                                    src="https://images.unsplash.com/photo-1598316560453-0246d4611979?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwxNnx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="1745952"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    Code Libraries Documentation</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Thorough documentation for your code
+                                                    libraries to provide users with the necessary information and usage
+                                                    guidelines.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-1 aspect-h-1">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="opened black laptop computer"
+                                                    src="https://images.unsplash.com/photo-1526925539332-aa3b66e35444?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyNnx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="667303"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    Tutorials and Guides</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Step-by-step tutorials and guides to
+                                                    assist users in learning and implementing AsmX programming language
+                                                    effectively.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="relative" style="z-index: 36;">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
+            </div>
+            <section class="relative">
+                <div class="relative flex flex-none break-word transition-all duration-300 pointer-events-none items-center fix-safari-flickering"
+                    style="min-height: calc(134px);">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute inset-0 z-5 transition-all duration-300"
+                            style="background-color: rgb(41, 41, 41);"></div>
+                    </div>
+                    <div
+                        class="relative z-10 container mx-auto px-5 md:px-6 transition-all duration-300 pt-12 lg:pt-20 pb-12 lg:pb-20">
+                        <div class="relative z-10  opacity-100 translate-y-0" style="">
+                            <h2 class="heading-large mb-6 transition-all duration-300 text-center"
+                                style="color: rgb(255, 255, 255); font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                Projects</h2>
+                        </div>
+                        <div class="flex flex-wrap w-full justify-center" style="gap: 40px;">
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-2 aspect-h-3">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="blue elephant figurine on macbook pro"
+                                                    src="https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHw0fHxEb2N1bWVudGF0aW9uJTIwcHJvZ3JhbW1pbmclMjBsYW5ndWFnZSUyMEFzbVh8ZW58MHx8fHwxNzAxMDI2Mjc4fDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="1004471"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    Optimizing AsmX Performance</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Enhanced the efficiency of AsmX
+                                                    programs, resulting in faster execution and improved overall
+                                                    performance.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-2 aspect-h-3">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="MacBook Pro"
+                                                    src="https://images.unsplash.com/photo-1522252234503-e356532cafd5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyOHx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="148408"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    Debugging and Troubleshooting AsmX Code</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Identified and resolved issues in AsmX
+                                                    code, ensuring smooth functionality and preventing errors and
+                                                    crashes.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-2 aspect-h-3">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="kanji text on wooden wall sign near fence"
+                                                    src="https://images.unsplash.com/photo-1523386574057-d43e1708e02e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyN3x8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="1107925"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    Creating User-Friendly AsmX Interfaces</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Designed intuitive and user-friendly
+                                                    interfaces for AsmX programs, improving user experience and
+                                                    satisfaction.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-2 aspect-h-3">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="black flat screen computer monitor"
+                                                    src="https://images.unsplash.com/photo-1607798748738-b15c40d33d57?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwzfHxEb2N1bWVudGF0aW9uJTIwcHJvZ3JhbW1pbmclMjBsYW5ndWFnZSUyMEFzbVh8ZW58MHx8fHwxNzAxMDI2Mjc4fDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="912912"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    Securing AsmX Applications</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Implemented robust security measures in
+                                                    AsmX applications, safeguarding sensitive data and protecting
+                                                    against threats.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-2 aspect-h-3">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="black and silver laptop computer on table"
+                                                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHw5fHxEb2N1bWVudGF0aW9uJTIwcHJvZ3JhbW1pbmclMjBsYW5ndWFnZSUyMEFzbVh8ZW58MHx8fHwxNzAxMDI2Mjc4fDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="1177189"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    Customizing AsmX Framework</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Tailored the AsmX framework to meet
+                                                    specific business requirements, providing a personalized and
+                                                    optimized solution.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex flex-col overflow-hidden rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                style="flex: 0 0 calc(33.3333% - 26.6667px);">
+                                <div style="" class="opacity-100 translate-y-0">
+                                    <div class="relative z-10 ">
+                                        <div
+                                            class="flex-shrink-0 relative w-full mx-auto transition-all duration-300 aspect-w-2 aspect-h-3">
+                                            <span
+                                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                    alt="MacBook Pro showing programming language"
+                                                    src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHw2fHxEb2N1bWVudGF0aW9uJTIwcHJvZ3JhbW1pbmclMjBsYW5ndWFnZSUyMEFzbVh8ZW58MHx8fHwxNzAxMDI2Mjc4fDA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                    decoding="async" data-nimg="fill"
+                                                    class="rounded-2xl md:rounded-3xl lg:rounded-4xl" _mstalt="1212133"
+                                                    style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                        </div>
+                                        <div class="">
+                                            <div class="flex flex-col text-center items-center py-6"
+                                                style="color: rgb(255, 255, 255);">
+                                                <p class="heading-medium mb-4 transition-all duration-300"
+                                                    style="color: currentcolor; font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                                    Migrating Legacy Code to AsmX</p>
+                                                <div class="rich-text-block website-wysiwyg transition-all duration-300"
+                                                    style="color: currentcolor;">Successfully migrated legacy code to
+                                                    AsmX, modernizing applications and enabling compatibility with the
+                                                    latest systems.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="relative" style="z-index: 35;">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
+            </div>
+            <section class="relative">
+                <div class="relative flex flex-none transition-all duration-300 pointer-events-none items-center fix-safari-flickering"
+                    style="min-height: calc(134px);">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute inset-0 z-5 transition-all duration-300"
+                            style="background-color: rgb(249, 115, 22);"></div>
+                    </div>
+                    <div class="relative z-10 transition-all duration-300 w-full pt-16 lg:pt-32 pb-16 lg:pb-32">
+                        <div class="relative z-10  opacity-100 translate-y-0" style="">
+                            <div class="transition-all duration-300 container mx-auto px-5 md:px-6">
+                                <h2 class="heading-large mb-6 break-word transition-all duration-300 text-center"
+                                    style="color: rgb(255, 255, 255); font-family: var(--head-fontFamily); font-weight: var(--head-fontWeight);">
+                                    Our Clients</h2>
+                            </div>
+                            <div class="transition-all duration-300 gallery-carousel">
+                                <div class="slider-container" style="position: relative;">
+                                    <div aria-live="polite" aria-atomic="true" tabindex="-1"
+                                        style="position: absolute; width: 1px; height: 1px; overflow: hidden; padding: 0px; margin: -1px; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border: 0px;">
+                                        Slide 1 of 3</div>
+                                    <div
+                                        style="align-items: center; justify-content: flex-start; position: absolute; display: flex; z-index: 1; inset: 0px; pointer-events: none;">
+                                        <div class="slider-control-centerleft" style="pointer-events: auto;"><button
+                                                class="" aria-label="previous" type="button" _mstaria-label="122239"
+                                                style="border: 0px; background: transparent; color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24" width="24" height="24"
+                                                    class="icon w-6 lg:w-12 h-6 lg:h-12" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.5" d="m15 19-7-7 7-7"></path>
+                                                </svg></button></div>
+                                    </div>
+                                    <div
+                                        style="align-items: center; justify-content: flex-end; position: absolute; display: flex; z-index: 1; inset: 0px; pointer-events: none;">
+                                        <div class="slider-control-centerright" style="pointer-events: auto;"><button
+                                                class="" aria-label="next" type="button" _mstaria-label="49634"
+                                                style="border: 0px; background: transparent; color: white; padding: 10px; text-transform: uppercase; opacity: 1; cursor: pointer;"><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24" width="24" height="24"
+                                                    class="icon w-6 lg:w-12 h-6 lg:h-12" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="1.5" d="m9 5 7 7-7 7"></path>
+                                                </svg></button></div>
+                                    </div>
+                                    <div
+                                        style="align-items: flex-end; justify-content: center; position: absolute; display: flex; z-index: 1; inset: 0px; pointer-events: none;">
+                                        <div class="slider-control-bottomcenter" style="pointer-events: auto;">
+                                            <ul class="flex gap-4 lg:gap-5 mt-4 md:mt-10">
+                                                <li><button
+                                                        class="w-2.5 h-2.5 rounded-full transition-all bg-gray-900 ring-4 ring-gray-200"></button>
+                                                </li>
+                                                <li><button
+                                                        class="w-2.5 h-2.5 rounded-full transition-all bg-gray-50"></button>
+                                                </li>
+                                                <li><button
+                                                        class="w-2.5 h-2.5 rounded-full transition-all bg-gray-50"></button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="slider-frame" aria-label="carousel-slider" role="region" tabindex="-1"
+                                        _mstaria-label="281476"
+                                        style="overflow: hidden; width: 100%; position: relative; outline: none; height: auto; transition: height 300ms ease-in-out 0s; will-change: height; user-select: none;">
+                                        <div class="slider-list"
+                                            style="width: 600%; text-align: left; user-select: auto; transform: translateX(calc(-30.5556% - 0px)); display: flex;">
+                                            <div class="slide prev-cloned" inert="true"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="monitor showing Java programming"
+                                                            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyMHx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="845754"></span></div>
+                                            </div>
+                                            <div class="slide prev-cloned" inert="true"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="Colorful software or web code on a computer monitor"
+                                                            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwxN3x8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="1700751"></span></div>
+                                            </div>
+                                            <div class="slide prev-cloned slide-visible"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="turned on MacBook Air on desk"
+                                                            src="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyMXx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="592943"></span></div>
+                                            </div>
+                                            <div class="slide slide-current slide-visible"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="monitor showing Java programming"
+                                                            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyMHx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="845754"></span></div>
+                                            </div>
+                                            <div class="slide slide-visible"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="Colorful software or web code on a computer monitor"
+                                                            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwxN3x8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="1700751"></span></div>
+                                            </div>
+                                            <div class="slide" inert="true"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="turned on MacBook Air on desk"
+                                                            src="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyMXx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="592943"></span></div>
+                                            </div>
+                                            <div class="slide next-cloned" inert="true"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="monitor showing Java programming"
+                                                            src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyMHx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="845754"></span></div>
+                                            </div>
+                                            <div class="slide next-cloned" inert="true"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="Colorful software or web code on a computer monitor"
+                                                            src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwxN3x8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="1700751"></span></div>
+                                            </div>
+                                            <div class="slide next-cloned" inert="true"
+                                                style="width: 11.1111%; flex: 1 1 0%; height: auto; padding: 0px 20px; opacity: 1;">
+                                                <div
+                                                    class="relative overflow-hidden transition-all duration-300 aspect-w-16 aspect-h-9 rounded-2xl md:rounded-3xl lg:rounded-4xl">
+                                                    <span
+                                                        style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                            alt="turned on MacBook Air on desk"
+                                                            src="https://images.unsplash.com/photo-1499673610122-01c7122c5dcb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwyMXx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                            decoding="async" data-nimg="fill"
+                                                            class=" object-center object-cover"
+                                                            draggable="false"
+                                                            style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"
+                                                            _mstalt="592943"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="relative" style="z-index: 34;">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
+            </div>
+            <section class="relative">
+                <div class="relative flex break-word transition-all duration-300 pointer-events-none items-center fix-safari-flickering"
+                    style="min-height: calc(134px);">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute inset-0 z-5 transition-all duration-300"
+                            style="background-color: rgb(26, 26, 26);"></div>
+                    </div>
+                    <div
+                        class="relative z-10 container mx-auto px-5 md:px-6 transition-all duration-300 pt-8 lg:pt-12 pb-8 lg:pb-12">
+                        <div class="relative z-10  opacity-100 translate-y-0" style="">
+                            <div
+                                class="flex w-full gap-10 lg:gap-20 transition-all duration-300 flex-col lg:flex-row items-center">
+                                <div class="flex-1 flex flex-col w-full max-w-240 items-center lg:items-start">
+                                    <div class="rich-text-block website-wysiwyg" style="color: rgb(255, 255, 255);">
+                                        <h2 style="white-space: pre-line">About us</h2>
+                                        <p>Welcome to AsmX, a leading documentation programming language focused on
+                                            providing innovative solutions. Based in the USA, we are dedicated to
+                                            empowering developers and programmers with the tools they need to excel in
+                                            their projects.</p>
+                                        <p>With our comprehensive documentation and user-friendly interface, AsmX makes
+                                            it easy for programmers to understand and implement complex code. Our team
+                                            of experienced professionals is committed to delivering high-quality
+                                            resources and support, ensuring that our users have the best experience
+                                            possible. Join us on this exciting journey of programming excellence with
+                                            AsmX.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 flex w-full lg:max-w-1/2 h-full transition-all duration-300 justify-center lg:justify-start">
+                                    <div
+                                        class="flex-shrink-0 relative mx-auto w-full transition-all duration-300 aspect-w-3 aspect-h-2">
+                                        <span
+                                            style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"><img
+                                                alt="a computer screen with a bunch of code on it"
+                                                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3wyNjI5NjF8MHwxfHNlYXJjaHwxOHx8RG9jdW1lbnRhdGlvbiUyMHByb2dyYW1taW5nJTIwbGFuZ3VhZ2UlMjBBc21YfGVufDB8fHx8MTcwMTAyNjI3OHww&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1080"
+                                                decoding="async" data-nimg="fill"
+                                                class="transition-all duration-300 rounded-2xl md:rounded-3xl lg:rounded-4xl"
+                                                _mstalt="1168271"
+                                                style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="relative" style="z-index: 33;">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
+            </div>
+            <section class="relative">
+                <div class="relative flex flex-none break-word transition-all duration-300 pointer-events-none items-center fix-safari-flickering"
+                    style="min-height: calc(134px);">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute inset-0 z-5 transition-all duration-300"
+                            style="background-color: rgb(26, 26, 26);"></div>
+                    </div>
+                    <div
+                        class="container mx-auto px-5 md:px-6 relative z-10 transition-all duration-300 pt-12 lg:pt-20 pb-12 lg:pb-20">
+                        <div class="relative z-10  opacity-100 translate-y-0" style="">
+                            <div class="flex flex-col w-full gap-10 lg:gap-20 transition-all duration-300 lg:flex-row">
+                                <div class="w-full md:w-1/2 lg:mt-10">
+                                    <div class="rich-text-block website-wysiwyg" style="color: rgb(255, 255, 255);">
+                                        <h3>Contact Us Now</h3>
+                                        <p>Complete the form below to get in touch with us. We are here to answer any
+                                            questions you may have and provide the support you need.</p>
+                                    </div>
+                                </div>
+                                <div class="w-full md:w-1/2">
+                                    <div class="flex flex-col lg:flex-row lg:space-x-4">
+                                        <div class="flex-1 mb-4"><label class="mb-1 body-small"
+                                                style="color: rgb(255, 255, 255);">Name</label><input
+                                                class="input border-none !shadow-none !placeholder-current" type="text"
+                                                style="border-radius: 8px; background-color: rgba(255, 255, 255, 0.07); color: rgb(255, 255, 255);">
+                                        </div>
+                                        <div class="flex-1 mb-4"><label class="mb-1 body-small"
+                                                style="color: rgb(255, 255, 255);">E-mail</label><input
+                                                class="input border-none !shadow-none !placeholder-current" type="text"
+                                                style="border-radius: 8px; background-color: rgba(255, 255, 255, 0.07); color: rgb(255, 255, 255);">
+                                        </div>
+                                    </div>
+                                    <div class="mb-4"><label class="mb-1 body-small"
+                                            style="color: rgb(255, 255, 255);">Message</label><textarea
+                                            class="input border-none !shadow-none !placeholder-current" rows="5"
+                                            style="border-radius: 8px; background-color: rgba(255, 255, 255, 0.07); color: rgb(255, 255, 255);"></textarea>
+                                    </div>
+                                    <div class="text-right"><button class="website-button lg w-36"
+                                            style="border-width: 2px; border-style: solid; box-shadow: none; scroll-behavior: smooth; font-family: var(--body-fontFamily); font-weight: var(--body-fontWeight); background-color: rgb(220, 195, 139); color: rgb(0, 0, 0); border-radius: 8px; border-color: rgb(220, 195, 139);">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="relative" style="z-index: 32;">
+            <div
+                class="flex flex-col items-center justify-center gap-4 absolute z-90 bg-black bg-opacity-20   opacity-0 transition-all hover:opacity-100">
+            </div>
+            <footer class="flex flex-col relative h-full">
+                <div class="relative flex-1 pointer-events-none fix-safari-flickering"
+                    style="color: rgb(255, 255, 255);">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute inset-0 z-5 transition-all duration-300"
+                            style="background-color: rgb(249, 115, 22);"></div>
+                    </div>
+                    <div
+                        class="container mx-auto px-5 md:px-6 relative z-10 pt-12 lg:pt-14 xl:pt-20 pb-12 lg:pb-14 xl:pb-20">
+                        <div class="flex flex-col lg:flex-row items-start lg:justify-between gap-12">
+                            <div class="flex flex-col gap-6 items-start lg:max-w-[30vw]">
+                                <div class="grid max-w-full">
+                                    <h2 class="heading-small lg:heading-medium  whitespace-nowrap overflow-hidden overflow-ellipsis max-w-full"
+                                        style="color: rgb(255, 255, 255); font-family: var(--footer-logo-fontFamily); font-weight: var(--footer-logo-fontWeight); width: auto;">
+                                        AsmX</h2>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-12 lg:gap-6">
+                                <div class="flex flex-col lg:flex-row gap-12 lg:items-center lg:justify-end">
+                                    <ul class="flex items-center gap-x-4 gap-y-2 flex-wrap">
+                                        <li>
+                                            <div class="flex justify-center items-center" style=""><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 24 24" width="24" height="24" class="icon w-6 h-6"
+                                                    aria-hidden="true" style="color: rgb(255, 255, 255);">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10.4375 21.8784C5.65941 21.1274 2 16.9877 2 12 2 6.48086 6.48086 2 12 2c5.5191 0 10 4.48086 10 10 0 4.9877-3.6594 9.1274-8.4375 9.8784v-6.9878h2.3301L16.3359 12h-2.7734v-1.8758c0-.79084.3874-1.5617 1.6296-1.5617h1.261V6.10156s-1.1443-.19531-2.2385-.19531c-2.2842 0-3.7771 1.38438-3.7771 3.89063V12H7.89844v2.8906h2.53906v6.9878Z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg></div>
+                                        </li>
+                                        <li>
+                                            <div class="flex justify-center items-center" style=""><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 24 24" width="24" height="24" class="icon w-6 h-6"
+                                                    aria-hidden="true" style="color: rgb(255, 255, 255);">
+                                                    <path fill-rule="evenodd"
+                                                        d="M12 2c5.5191 0 10 4.48086 10 10 0 5.5191-4.4809 10-10 10-5.51914 0-10-4.4809-10-10C2 6.48086 6.48086 2 12 2Zm0 3.75c-1.6974 0-1.9102.00719-2.57688.03762-.66523.03035-1.11957.13601-1.51714.29051-.41098.15972-.75953.37343-1.107.72089-.34746.34746-.56117.69602-.72089 1.107-.1545.39753-.26012.85187-.29051 1.5171C5.75719 10.0898 5.75 10.3026 5.75 12s.00719 1.9102.03758 2.5769c.03039.6652.13601 1.1195.29051 1.5171.15972.411.37343.7595.72089 1.107.34747.3475.69602.5612 1.107.7209.39757.1545.85191.2601 1.51714.2905.66668.0304.87948.0376 2.57688.0376s1.9102-.0072 2.5769-.0376c.6652-.0304 1.1195-.136 1.5171-.2905.411-.1597.7595-.3734 1.107-.7209.3475-.3475.5612-.696.7209-1.107.1545-.3976.2601-.8519.2905-1.5171.0304-.6667.0376-.8795.0376-2.5769 0-1.6974-.0072-1.9102-.0376-2.57688-.0304-.66523-.136-1.11957-.2905-1.5171-.1597-.41098-.3734-.75954-.7209-1.107s-.696-.56117-1.107-.72089c-.3976-.1545-.8519-.26016-1.5171-.29051C13.9102 5.75719 13.6974 5.75 12 5.75Zm0 1.12613c1.6688 0 1.8665.00637 2.5255.03645.6094.02781.9403.12961 1.1606.21519.2917.11336.4999.24883.7186.46754.2187.21867.3542.42692.4675.71864.0856.22023.1874.55113.2152 1.1605.0301.65905.0365.85675.0365 2.52555s-.0064 1.8665-.0365 2.5255c-.0278.6094-.1296.9403-.2152 1.1606-.1133.2917-.2488.4999-.4675.7186-.2187.2187-.4269.3542-.7186.4675-.2203.0856-.5512.1874-1.1606.2152-.6589.0301-.8566.0365-2.5255.0365s-1.8666-.0064-2.52555-.0365c-.60937-.0278-.94027-.1296-1.1605-.2152-.29176-.1133-.49997-.2488-.71868-.4675-.21871-.2187-.35414-.4269-.4675-.7186-.08558-.2203-.18742-.5512-.21523-1.1606-.03008-.659-.03641-.8567-.03641-2.5255s.00633-1.8665.03641-2.52555c.02781-.60937.12965-.94027.21523-1.1605.11336-.29172.24879-.49997.4675-.71864.21871-.21871.42692-.35418.71868-.46754.22023-.08558.55113-.18738 1.1605-.21519.65905-.03008.85675-.03645 2.52555-.03645Zm0 1.91442c-1.7725 0-3.20945 1.43695-3.20945 3.20945S10.2275 15.2095 12 15.2095s3.2095-1.437 3.2095-3.2095c0-1.7725-1.437-3.20945-3.2095-3.20945Zm0 5.29275c-1.1506 0-2.08332-.9327-2.08332-2.0833 0-1.1506.93272-2.08332 2.08332-2.08332S14.0833 10.8494 14.0833 12 13.1506 14.0833 12 14.0833Zm4.0863-5.41955c0 .41422-.3358.74996-.7501.74996-.4141 0-.7499-.33574-.7499-.74996s.3358-.75.7499-.75c.4143 0 .7501.33578.7501.75Z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg></div>
+                                        </li>
+                                        <li>
+                                            <div class="flex justify-center items-center" style=""><svg
+                                                    xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 24 24" width="24" height="24" class="icon w-6 h-6"
+                                                    aria-hidden="true" style="color: rgb(255, 255, 255);">
+                                                    <path
+                                                        d="M13.6756 10.6218 20.2324 3h-1.5537l-5.6933 6.61788L8.43817 3H3.1935l6.8763 10.0074L3.1935 21h1.55384l6.01226-6.9887L15.5618 21h5.2447l-7.1313-10.3782h.0004Zm-2.1282 2.4738-.6967-.9965-5.54349-7.92939h2.38662l4.47367 6.39919.6967.9966 5.8152 8.318h-2.3866l-4.7454-6.7875v-.0004Z">
+                                                    </path>
+                                                </svg></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
 </body>
 </html>
